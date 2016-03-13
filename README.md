@@ -13,9 +13,9 @@ MSDN provides this [list of WinRT APIs that can be called from desktop apps](htt
 
 **To find the UWP WinRT APIs themselves**, look for example at this file:
 ```
-C:\Program Files (x86)\Windows Kits\10\Platforms\UAP\10.0.10240.0\Platform.xml
+C:\Program Files (x86)\Windows Kits\10\Platforms\UAP\10.0.10586.0\Platform.xml
 ```
-This Platform.xml file conveys which WinRT APIs are available in "version 10240" of the UWP SDK. (This was the version that came out at VS2015 RTM. Newer versions will come out periodically). The Platform.xml file works by being an index into a set of other winmd files. It looks like this:
+This Platform.xml file conveys which WinRT APIs are available in "version 10586" of the UWP SDK. (This was the version that came out at VS2015 SP1. Newer versions will come out periodically). The Platform.xml file works by being an index into a set of other winmd files. It looks like this:
 ```
 <ApiContract name="Windows.Foundation.FoundationContract" version="1.0.0.0" />
 <ApiContract name="Windows.Foundation.UniversalApiContract" version="1.0.0.0" />
@@ -25,7 +25,7 @@ Each line denote a .winmd file in the `C:\Program Files (x86)\Windows Kits\10\Re
 
 These three winmd files make up the WinRT APIs available across all Win10 devices. You might additionally want to use the additional WinRT APIs that are part of Desktop. Look at this file:
 ```
-C:\Program Files (x86)\Windows Kits\10\Extension SDKs\WindowsDesktop\10.0.10240.0\SDKManifest.xml
+C:\Program Files (x86)\Windows Kits\10\Extension SDKs\WindowsDesktop\10.0.10586.0\SDKManifest.xml
 ```
 It has a load more `<ApiContract>` directives, pointing to additional .winmd files you should reference from the `C:\Program Files (x86)\Windows Kits\10\References` directory. I haven't bothered to do that.
 
